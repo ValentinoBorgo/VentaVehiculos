@@ -1,0 +1,92 @@
+[
+    {
+        "numVehiculo": 1,
+        "marcaModelo": "Bmw,i350",
+        "color": "Blanco",
+        "Km": "0",
+        "precio": "USD 35.000",
+        "año": 2023,
+        "combustible": "Nafta",
+        "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQTI6xfzW12hUHQ_-uLq8jPnGqpRv4a7wQgPQ&usqp=CAU"
+    },
+    {
+        "numVehiculo": 2,
+        "marcaModelo": "Honda Civic exs 16",
+        "color": "Gris",
+        "Km": "50.000",
+        "precio": "USD 12.000",
+        "año": 2016,
+        "combustible": "Nafta",
+        "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSbJWPzfxH5K10v-3AeLWK9z8I-_Ji8H4S6xg&usqp=CAU"
+    },
+    {
+        "numVehiculo": 3,
+        "marcaModelo": "Mercedes Benz c300",
+        "color": "Blanco",
+        "Km": "5.000",
+        "precio": "USD 40.000",
+        "año": 2017,
+        "combustible": "Nafta",
+        "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRqZisiyXlVUymyUx5bP_aLW3uQPnPNK1bk5Q&usqp=CAU"
+    },
+    {
+        "numVehiculo": 4,
+        "marcaModelo": "Toyota Hilux 23",
+        "color": "Negro",
+        "Km": "0",
+        "precio": "USD 35.000",
+        "año": 2023,
+        "combustible": "Diesel",
+        "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSP_Q6PBpfTNo0rwNSVJ6uSwKHAsN7SGrmlmg&usqp=CAU"
+    },
+    {
+        "numVehiculo": 5,
+        "marcaModelo": "Volkswagen Scirocco 2.0 Tsi 211cv",
+        "color": "Negro",
+        "Km": "100.000",
+        "precio": "USD 25.000",
+        "año": 2013,
+        "combustible": "Nafta",
+        "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTusE-fOvKx614HCDxpnizszBlVcsm0tRG2Yw&usqp=CAU"
+    },
+    {
+        "numVehiculo": 6,
+        "marcaModelo": "Citroen c3",
+        "color": "Gris",
+        "Km": "70.000",
+        "precio": "USD 7.000",
+        "año": 2015,
+        "combustible": "Nafta",
+        "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ14LIkQJeyvpNx2vkpPo-d7I69xoDDvsPQiQ&usqp=CAU"
+    },
+    {
+        "numVehiculo": 7,
+        "marcaModelo": "Fiat Cronos 1.8",
+        "color": "Gris oscuro",
+        "Km": "15.000",
+        "precio": "USD 9.000",
+        "año": 2019,
+        "combustible": "Nafta",
+        "imagen": "https://media.lacapital.com.ar/p/4450c9de18b45422b0454ed04d1e5146/adjuntos/203/imagenes/100/079/0100079307/642x0/smart/imagefiatjpg.jpg"
+    },
+    {
+        "numVehiculo": 8,
+        "marcaModelo": "Volkswagen Vento 1.4 Highline 150cv At",
+        "color": "Blanco",
+        "Km": "9.000",
+        "precio": "USD 37.000",
+        "año": 2020,
+        "combustible": "Nafta",
+        "imagen": "https://http2.mlstatic.com/D_NQ_NP_664190-MLA52150354029_102022-O.jpg"
+    },
+    {
+        "numVehiculo": 9,
+        "marcaModelo": "Toyota Corolla Gr",
+        "color": "Blanco",
+        "Km": "0",
+        "precio": "USD 29.500",
+        "año": 2023,
+        "combustible": "Nafta",
+        "imagen": "https://http2.mlstatic.com/D_NQ_NP_981979-MLA53145901453_012023-O.jpg"
+    }
+]

@@ -1,0 +1,280 @@
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Quicksand', sans-serif;
+}
+hr{
+    width: 90%;
+    color: black;
+    margin: auto;
+}
+#btn-eliminarReservas {
+    margin: 2rem;
+}
+
+#titu3div {
+    background-color: black;
+}
+
+#titu1div {
+    background-color: black;
+    box-shadow: 0 0.1rem 0.4rem black;
+}
+
+#titu2div {
+    background-color: black;
+    box-shadow: 0 0.1rem 0.4rem black;
+}
+
+#titu3div {
+    background-color: black;
+}
+
+#titulo3 {
+    text-align: left;
+    color: blue;
+    font-size: larger;
+    padding: 1rem;
+    margin-bottom: 0;
+}
+
+#titulo2 {
+    text-align: left;
+    color: blue;
+    font-size: larger;
+    padding: 1rem;
+    margin-bottom: 0;
+}
+
+#titulo1 {
+    text-align: center;
+    color: blue;
+    font-size: larger;
+    padding: 1rem;
+    margin-bottom: 0;
+}
+
+#divPublicar {
+    background-color: rebeccapurple;
+    padding: 2rem;
+}
+
+#segundoTitulo2 {
+    text-align: center;
+    font-size: 2rem;
+    padding: 1rem;
+    color: black;
+}
+
+.contacto a{
+    text-decoration: none;
+}
+
+.contacto a:hover{
+    text-decoration: none;
+    color: white;
+}
+
+.navbar {
+    padding: 1rem;
+}
+
+.navbar-collapse {
+    align-items: center;
+    justify-content: space-between;
+}
+
+.nav-item a {
+    transition: all 0.7s;
+}
+
+.nav-item a:hover {
+    transform: scale(1.1);
+}
+
+.principal {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    height: calc(100vh - 65px);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100% 100%;
+}
+
+#disponibles {
+    font-size: 1cm;
+    padding: 1rem;
+}
+
+#kmTitu {
+    font-size: 1cm;
+    margin: 1rem;
+}
+
+.enlaceVehi {
+    text-decoration: none;
+    color: black;
+}
+
+.card-groupkm {
+    display: flex;
+}
+
+.card-group {
+    font-size: medium;
+    display: flex;
+}
+
+.card {
+    justify-content: space-between;
+    width: 18rem;
+    margin: 1.5rem;
+    border: solid black 1px;
+    border-radius: 0.5rem;
+    position: relative;
+    cursor: pointer;
+}
+
+.card-img-top {
+    width: 286px;
+    height: 170px;
+    border-radius: 0.3rem;
+}
+
+.card:hover {
+    transition: box-shadow 0.3s ease;
+    box-shadow: 0 0.1rem 0.4rem black;
+}
+
+.card-title {
+    /* previene saltos de linea */
+    white-space: nowrap;
+    /* oculta el texto que sobra */
+    overflow: hidden;
+    /* Impone los puntos suspensivos */
+    text-overflow: ellipsis;
+}
+
+footer {
+    color: white;
+    text-align: center;
+    width: 100%;    
+    padding: 50px 0px;
+    background-image: url(https://wisynco.com/wp-content/uploads/2014/12/footer-background-011.jpg);
+    background-size: cover;
+}
+.container__footer{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 1rem;   
+}
+#formC{
+    display: flex;
+    background-color: gray;
+    color: black;
+    justify-content: center;
+}
+#form {
+    display: flex;
+    background-color: gray;
+    color: black;
+    justify-content: space-between;
+}
+#contenedorURL {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    height: calc(100vh - 65px);
+    margin-bottom: 0;
+}
+#btnC{
+    margin: 1rem;
+    width: 5cm;
+    height: 1cm;
+    margin-left: 37rem;
+}
+.labelC{
+    margin-left: 29rem;
+    margin-bottom: 0.5rem;
+}
+.label1 {
+    margin-left: 1rem;
+}
+
+.label2 {
+    margin-top: -3rem;
+}
+
+#nmC, #eC, #aC{
+    width: 10cm;
+    height: 1cm;
+    margin-left: 31rem;
+}
+#mC{
+    width: 10cm;
+    height: 6cm;
+    margin-left: 31rem;
+}
+#Dni,
+#nombreApellido,
+#Email,
+#Telefono,
+#formFile {
+    width: 8cm;
+    height: 1cm;
+    margin-left: 2rem;
+}
+
+#marcaModelo,
+#color,
+#km,
+#precio,
+#año {
+    width: 8cm;
+    height: 1cm;
+    margin-left: 2rem;
+}
+
+#btnEnviar {
+    margin: 1rem;
+    width: 5cm;
+    height: 1cm;
+}
+
+.swal-modal {
+    border: 3px solid black;
+}
+
+.swal-overlay {
+    background-color: rgba(56, 56, 56, 0.45);
+}
+
+.swal-footer {
+    background-color: rgb(245, 248, 250);
+    margin-top: 32px;
+    border-top: 1px solid #E9EEF1;
+    overflow: hidden;
+}
+
+@media screen and (max-width : 767px) {
+    .navbar-brand {
+        display: none;
+    }
+}
+
+@media screen and (max-width : 1121px) {
+    .row {
+        flex-direction: column;
+    }
+}
+
+@media screen and (max-width : 680px) {
+    .card-groupkm {
+        display: table-row;
+    }
+}
