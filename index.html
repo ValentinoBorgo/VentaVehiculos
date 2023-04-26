@@ -49,15 +49,30 @@
                         <a class="nav-link active" href="contacto.html">Contacto</a>
                     </li>
                     <li class="nav-item">
-                        <a href="#" style="color: black; text-decoration: none;">
-                            <i class="bi bi-cart" style="font-size: 0.6cm;" onClick="mostrarCarro()"
-                                id="contadorCarro"></i>
+                        <a href="#" style="color: black; text-decoration: none;" id="openBtn">
+                            <i class="bi bi-cart" style="font-size: 0.6cm;" id="contadorCarro">
+                            </i>
                         </a>
+                        <!-- Contenedor principal del modal -->
+                        <div id="myModal" class="modal">
+                            <!-- Contenedor del contenido del modal -->
+                            <div class="modal-content">
+                                <!-- Botón de cierre del modal -->
+                                <span class="closeBtn">&times;</span>
+                                <!-- Contenido del modal -->
+                                <h5>Vehiculos Seleccionados para la reserva momentanea :</h5>
+                                <div>
+                                    <p id="descriptionVehiculo"></p>
+                                </div>
+                            </div>
+                        </div>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
+
+
     <section>
         <img src="https://estaticos-cdn.elperiodico.com/clip/e8c0ecc1-2ca8-46ed-938c-c5ac5c58c7be_alta-libre-aspect-ratio_default_0.jpg"
             class="principal">
