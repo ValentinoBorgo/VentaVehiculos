@@ -155,22 +155,6 @@ hr{
     margin: 1rem;
 }
 
-.enlaceVehi {
-    text-decoration: none;
-    color: black;
-}
-
-.card-groupkm {
-    display: flex;
-    justify-content: center;
-}
-
-.card-group {
-    font-size: medium;
-    display: flex;
-    justify-content: center;
-}
-
 .card {
     justify-content: space-between;
     width: 18rem;
@@ -180,6 +164,27 @@ hr{
     position: relative;
     cursor: pointer;
 }
+
+.enlaceVehi {
+    text-decoration: none;
+    color: black;
+}
+
+.card-groupkm {
+    font-size: medium;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    margin: 7rem;
+    margin-top: -0.1rem;
+    justify-content: center;
+}
+
+.card-group {
+    font-size: medium;
+    display: flex;
+    justify-content: center;
+}
+
 
 .card-img-top {
     width: 286px;
@@ -220,12 +225,12 @@ footer {
     background-color: gray;
     color: black;
     justify-content: center;
+    margin-left: -4rem;
 }
 #form {
     display: flex;
     background-color: gray;
     color: black;
-    justify-content: space-between;
 }
 #contenedorURL {
     display: flex;
@@ -243,6 +248,7 @@ footer {
 .labelC{
     margin-left: 29rem;
     margin-bottom: 0.5rem;
+    font-weight: bold;
 }
 .label1 {
     margin-left: 1rem;

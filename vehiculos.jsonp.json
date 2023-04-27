@@ -88,5 +88,45 @@
         "año": 2023,
         "combustible": "Nafta",
         "imagen": "https://http2.mlstatic.com/D_NQ_NP_981979-MLA53145901453_012023-O.jpg"
+    },
+    {
+        "numVehiculo": 10,
+        "marcaModelo": "Volkswagen Golf 1.4 Highline Tsi Dsg",
+        "color": "Blanco",
+        "Km": "75.000",
+        "precio": "USD 21.500",
+        "año": 2017,
+        "combustible": "Nafta",
+        "imagen": "https://http2.mlstatic.com/D_NQ_NP_864826-MLA54697168132_032023-O.webp"
+    },
+    {
+        "numVehiculo": 11,
+        "marcaModelo": "Volkswagen Tiguan Allspace 2.0 Tsi Comfortline Dsg",
+        "color": "Blanco",
+        "Km": "50.000",
+        "precio": "USD 36.750",
+        "año": 2019,
+        "combustible": "Nafta",
+        "imagen": "https://http2.mlstatic.com/D_NQ_NP_660664-MLA54973799856_042023-O.webp"
+    },
+    {
+        "numVehiculo": 12,
+        "marcaModelo": "Volkswagen Amarok 3.0 V6 Extreme",
+        "color": "Gris",
+        "Km": "0",
+        "precio": "USD 41.000",
+        "año": 2023,
+        "combustible": "Nafta",
+        "imagen": "https://http2.mlstatic.com/D_NQ_NP_815421-MLA53006471510_122022-O.webp"
+    },
+    {
+        "numVehiculo": 13,
+        "marcaModelo": "Chevrolet Cruze 5 1.4 Rs At 5 p",
+        "color": "Blanco",
+        "Km": "0",
+        "precio": "USD 19.000",
+        "año": 2023,
+        "combustible": "Nafta",
+        "imagen": "https://http2.mlstatic.com/D_NQ_NP_695522-MLA54973734013_042023-O.webp"
     }
 ]

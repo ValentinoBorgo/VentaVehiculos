@@ -1,10 +1,17 @@
+// Variable global donde se guardan los datos del json.
 let allData;
 
-setTimeout(() =>{
+//Elimina todos los datos del sesion cada que recargue la web.
+window.addEventListener('beforeunload', function() {
+    sessionStorage.clear();
+  });
+
+
+setTimeout(() => {
     fetch('vehiculos.jsonp.json')
-    .then(response => response.json())
-    .then(data => allData = data);
-},2000)
+        .then(response => response.json())
+        .then(data => allData = data);
+},)
 
 ////////////////////////////////////////////////////
 
@@ -16,10 +23,10 @@ const kmTitu = document.getElementById("kmTitu");
 function mostrar0km() {
     let km0 = "";
     let con = 1;
-    let km = allData.filter(datKm => datKm.Km == "0");
+    let  km = allData.filter(datKm => datKm.Km == "0");
     if (km != "") {
         km.forEach(data0Km => {
-            km0 += `<div class="enlaceVehi${con++}"><div class="card">
+            km0 += `<div class="enlaceVehi${data0Km.numVehiculo}"><div class="card">
              <img class="card-img-top" src="${data0Km.imagen}" alt="Card image cap">
              <div class="card-body">
              <h5 class="card-title">${data0Km.marcaModelo}</h5>
@@ -29,7 +36,7 @@ function mostrar0km() {
              </div>
              </div>
            </div>`
-            localStorage.setItem("Lista Vehiculos", JSON.stringify(allData))
+            localStorage.setItem("Lista Vehiculos", JSON.stringify(km))
             cartas00.innerHTML = km0;
             cartas.innerHTML = null;
             disponiblesTitu.style.display = "none";
@@ -95,40 +102,48 @@ function eliminarReservas() {
         }
     })
     contador.innerHTML = "";
+    cont = 0;
     reservasCarro.length = 0;
 };
 
 const contador = document.getElementById("contadorCarro")
 const reservasCarro = [];
+// Variable global contadora(modal).
 let cont = 0;
+//
+let contObtenerAEliminar;
 
-
+// AL PASAR LOS OKM ME TOMA LA POSICION 9 DEL COROLLA, PERO EN REALIDAD EN ENLACE3!!!
 function reserva(posicion) {
     allData.forEach(datos => {
         if (datos.numVehiculo == (posicion)) {
-            sessionStorage.setItem("Reserva " + cont++, datos.marcaModelo);
+            sessionStorage.setItem("Reserva 0-" + datos.numVehiculo, datos.marcaModelo);
             reservasCarro.push(datos.marcaModelo);
-            let enlace = document.querySelector(".enlaceVehi" + datos.numVehiculo);
-            enlace.style.display = "none";
+            let enlace = document.querySelector(".enlaceVehi" + posicion);
+            console.log(enlace);
+            enlace.style.display = "none";  
             swal({
                 icon: 'success',
                 title: 'Vehiculo Reservado Exitosamente',
             });
         }
     })
-    contador.innerHTML = cont;
+    
+    contador.innerHTML = cont = cont + 1;
 };
+
 
 let detalles = document.getElementById("descriptionVehiculo");
 
-
 // Metodo para mostrar los carros reservados
+let numParaEliminar;
 const mostrarCarro = () => {
     let coche = [];
     console.log(reservasCarro);
     allData.forEach(info => {
         for (let i = 0; i <= reservasCarro.length; i++) {
             if (info.marcaModelo == reservasCarro[i]) {
+                numParaEliminar = info.numVehiculo;
                 // let miImagen  = new Image();
                 // imgTodos.push(miImagen);
                 // ${miImagen = info.imagen}
@@ -146,17 +161,42 @@ const mostrarCarro = () => {
     })
 };
 
+
 // Esta funcion elimina los coches del carrito de ventas
 const eliminarCarro = (i) => {
-    let divEliminar = document.querySelector('.eliminar'+i);
-    reservasCarro.splice(i-i,i+1);
+    let divEliminar = document.querySelector('.eliminar' + i);
+    reservasCarro.splice(i - i, i + 1);
     divEliminar.remove();
-    contador.innerHTML = cont-1;
-    console.log(reservasCarro);
+    contador.innerHTML = cont = cont - 1;
+    allData.forEach(dat => {
+        if (dat.numVehiculo == i) {
+            let html = '';
+            html += `<div class="enlaceVehi${dat.numVehiculo}"><div class="card">
+            <img class="card-img-top" src="${dat.imagen}" alt="Card image cap">
+            <div class="card-body">
+            <h5 class="card-title">${dat.marcaModelo}</h5>
+            <p class="card-text">Precio :  ${dat.precio}</p>
+            <button class="btn btn-success" onClick="reserva(${dat.numVehiculo})" >Reservar ya</button>
+            <button class="btn btn-primary" onClick="mostrarDetalles(${dat.numVehiculo})">Ver detalles</button>
+            </div>
+            </div>
+            </div>`
+            // cartas.innerHTML += html;    
+            sessionStorage.removeItem("Reserva 0-"+i, dat.marcaModelo)
+        }
+        let enlace = document.querySelector(".enlaceVehi" + i);
+        if (enlace.style.display = "none") {
+            enlace.style.display = "block";
+        } else if (kmTitu.style.display = "none") {
+            kmTitu.style.display = "block";
+        }
+        localStorage.setItem("Lista Vehiculos", JSON.stringify(dat));
+    })
 }
 
 
 
+// Funcion que entrega los detalles del vehiculo.
 function mostrarDetalles(posicion) {
     let contenido = "";
     let img;
