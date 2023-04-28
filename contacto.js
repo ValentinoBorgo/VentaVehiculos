@@ -14,7 +14,6 @@ function correoEnviado() {
   })
   .then(response => response)
   .then(data => {
-    console.log(data);
     swal({
       title : 'Correo enviado efectivamente!',
       text : 'Puede seguir navegando',

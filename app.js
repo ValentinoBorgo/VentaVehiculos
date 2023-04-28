@@ -1,17 +1,24 @@
 // Variable global donde se guardan los datos del json.
 let allData;
 
-//Elimina todos los datos del sesion cada que recargue la web.
-window.addEventListener('beforeunload', function() {
-    sessionStorage.clear();
-  });
+let spiner = document.getElementById('contenedor-carga');
+let desabilitarNav = document.getElementById('nav-deshabilitar');
 
+//Elimina todos los datos del sesion cada que recargue la web.
+window.addEventListener('beforeunload', function () {
+    sessionStorage.clear();
+});
+
+desabilitarNav.style.display = 'none';
 
 setTimeout(() => {
     fetch('vehiculos.jsonp.json')
         .then(response => response.json())
         .then(data => allData = data);
-},)
+    spiner.style.visibility = 'hidden';
+    spiner.style.opacity = '0';
+    desabilitarNav.style.display = 'block';
+}, 2000)
 
 ////////////////////////////////////////////////////
 
@@ -20,10 +27,11 @@ const cartas00 = document.querySelector(".card-groupkm");
 const disponiblesTitu = document.getElementById("disponibles");
 const kmTitu = document.getElementById("kmTitu");
 
+
 function mostrar0km() {
     let km0 = "";
     let con = 1;
-    let  km = allData.filter(datKm => datKm.Km == "0");
+    let km = allData.filter(datKm => datKm.Km == "0");
     if (km != "") {
         km.forEach(data0Km => {
             km0 += `<div class="enlaceVehi${data0Km.numVehiculo}"><div class="card">
@@ -113,7 +121,7 @@ let cont = 0;
 //
 let contObtenerAEliminar;
 
-// AL PASAR LOS OKM ME TOMA LA POSICION 9 DEL COROLLA, PERO EN REALIDAD EN ENLACE3!!!
+
 function reserva(posicion) {
     allData.forEach(datos => {
         if (datos.numVehiculo == (posicion)) {
@@ -121,14 +129,14 @@ function reserva(posicion) {
             reservasCarro.push(datos.marcaModelo);
             let enlace = document.querySelector(".enlaceVehi" + posicion);
             console.log(enlace);
-            enlace.style.display = "none";  
+            enlace.style.display = "none";
             swal({
                 icon: 'success',
                 title: 'Vehiculo Reservado Exitosamente',
             });
         }
     })
-    
+
     contador.innerHTML = cont = cont + 1;
 };
 
@@ -151,8 +159,8 @@ const mostrarCarro = () => {
                 <div class="eliminar${info.numVehiculo}">
                 Vehiculo : ${info.marcaModelo} 
                 Precio : USD ${info.precio}
-                <button class="btn btn-danger" onClick="eliminarCarro(${info.numVehiculo})">Eliminar</button>
-                </div>`;
+                <button class="btn btn-danger btn-sm" onClick="eliminarCarro(${info.numVehiculo})">Eliminar</button>
+                </div><br>`;
                 // let imgElement = document.getElementById("imgCoche");
                 // imgElement.src = miImagen;
                 detalles.innerHTML = coche;
@@ -182,7 +190,7 @@ const eliminarCarro = (i) => {
             </div>
             </div>`
             // cartas.innerHTML += html;    
-            sessionStorage.removeItem("Reserva 0-"+i, dat.marcaModelo)
+            sessionStorage.removeItem("Reserva 0-" + i, dat.marcaModelo)
         }
         let enlace = document.querySelector(".enlaceVehi" + i);
         if (enlace.style.display = "none") {

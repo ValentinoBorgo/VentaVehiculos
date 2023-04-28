@@ -10,6 +10,39 @@ hr{
     color: black;
     margin: auto;
 }
+#contenedor-carga{
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    -webkit-transition: all 1s ease;
+    -o-transition: all 1s ease;
+    transition: all 1s ease;
+    z-index: 10000;
+    margin: 1rem;
+}
+
+#carga{
+    border: 15px solid #ccc;
+    border-top-color: green;
+    border-top-style: groove;
+    height: 100px;
+    width: 100px;
+    border-radius: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    -webkit-animation: girar 1.5s linear infinite;
+    -o-animation: girar 1.5s linear infinite;
+    animation: girar 1.5s linear infinite;
+}
+
+@keyframes girar{
+    from{ transform: rotate(0deg);}
+    to{transform: rotate(360deg);}
+}
+
 #btn-eliminarReservas {
     margin: 2rem;
 }
@@ -206,6 +239,11 @@ hr{
     text-overflow: ellipsis;
 }
 
+/* .btn-success, .btn-primary{
+    width: 3cm;
+    height: 1cm;
+} */
+
 footer {
     color: white;
     text-align: center;
@@ -232,13 +270,7 @@ footer {
     background-color: gray;
     color: black;
 }
-#contenedorURL {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    height: calc(100vh - 65px);
-    margin-bottom: 0;
-}
+
 #btnC{
     margin: 1rem;
     width: 5cm;
@@ -248,7 +280,6 @@ footer {
 .labelC{
     margin-left: 29rem;
     margin-bottom: 0.5rem;
-    font-weight: bold;
 }
 .label1 {
     margin-left: 1rem;
@@ -289,11 +320,14 @@ footer {
 }
 
 #btnEnviar {
-    margin: 1rem;
+    margin: 3rem;
+    margin-left: 20rem;
     width: 5cm;
     height: 1cm;
 }
-
+.modal-content{
+    font-size: small;
+}
 .swal-modal {
     border: 3px solid black;
 }
@@ -324,5 +358,72 @@ footer {
 @media screen and (max-width : 680px) {
     .card-groupkm {
         display: table-row;
+    }
+}
+@media only screen and (max-width:540px){
+    .card-group{
+       display: grid; 
+    }
+}
+@media  only screen and (max-width:1251px) {
+    #btnEnviar {
+        margin: 3rem;
+        margin-left: 4rem;
+        width: 5cm;
+        height: 1cm;
+    }
+}
+@media only screen and (max-width: 1251px){
+    #Dni,
+#nombreApellido,
+#Email,
+#Telefono,
+#formFile {
+    width: 7cm;
+    height: 1cm;
+    margin-left: 1rem;
+}
+
+#marcaModelo,
+#color,
+#km,
+#precio,
+#año {
+    width: 7cm;
+    height: 1cm;
+    margin-left: 1rem;
+}
+.label1 {
+    margin-left: 2rem;
+    margin-top: 1rem;
+}
+
+.label2 {
+    margin-left: 2rem;
+    margin-top: 1rem;
+}
+}
+
+@media only screen and (max-width:1000px){
+    .labelC{
+        margin-left: 4rem;
+        margin-bottom: 0.5rem;
+        margin-top: 1rem;
+    }
+    #nmC, #eC, #aC{
+        width: 6cm;
+        height: 1cm;
+        margin-left: 5rem;
+    }
+    #mC{
+        width: 7cm;
+        height: 6cm;
+        margin-left: 4rem;
+    }
+    #btnC{
+        margin: 1rem;
+        width: 5cm;
+        height: 1cm;
+        margin-left: 6rem;
     }
 }
