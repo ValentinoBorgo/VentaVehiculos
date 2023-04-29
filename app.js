@@ -126,7 +126,9 @@ function reserva(posicion) {
     allData.forEach(datos => {
         if (datos.numVehiculo == (posicion)) {
             sessionStorage.setItem("Reserva 0-" + datos.numVehiculo, datos.marcaModelo);
-            reservasCarro.push(datos.marcaModelo);
+            // Problema aca.
+            reservasCarro.push(datos.marcaModelo);  
+            console.log(reservasCarro+"LOL");
             let enlace = document.querySelector(".enlaceVehi" + posicion);
             console.log(enlace);
             enlace.style.display = "none";
@@ -171,12 +173,29 @@ const mostrarCarro = () => {
 
 
 // Esta funcion elimina los coches del carrito de ventas
+// Cuando borro un auto el array se vacia completamente
 const eliminarCarro = (i) => {
     let divEliminar = document.querySelector('.eliminar' + i);
-    reservasCarro.splice(i - i, i + 1);
+    // PROBLEMA ACA !!!!! el array se vacia completamente, if si I es igual a un numero de vehiculo borrar ese vehiculo
+    // del array
+    console.log(reservasCarro);
     divEliminar.remove();
     contador.innerHTML = cont = cont - 1;
+    let contadorDeEntrada = 1;
     allData.forEach(dat => {
+        for (let a = 0;a <= reservasCarro.length; a++){
+            if (contadorDeEntrada < 2){
+                if(i == dat.numVehiculo ){
+                    console.log(i+" "+dat.numVehiculo);
+                    contadorDeEntrada = contadorDeEntrada + 1;
+                    const index = reservasCarro.indexOf(dat.marcaModelo);
+                    reservasCarro.splice(index,1);
+                    console.log(reservasCarro+" Carros que quedan");
+                }
+            }else{
+                console.log("Nose ");
+            }
+        }
         if (dat.numVehiculo == i) {
             let html = '';
             html += `<div class="enlaceVehi${dat.numVehiculo}"><div class="card">
