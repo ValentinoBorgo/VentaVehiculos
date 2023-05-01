@@ -124,19 +124,28 @@ let contObtenerAEliminar;
 
 function reserva(posicion) {
     allData.forEach(datos => {
+        for (let i = 0; i < reservasCarro.length; i++) {
+            if (reservasCarro[i] == datos.marcaModelo) {
+                swal({
+                    icon: 'error',
+                    title: 'Vehiculo ya reservado',
+                });
+                return;
+            }
+        }
         if (datos.numVehiculo == (posicion)) {
+            contador.innerHTML = cont = cont + 1;
             sessionStorage.setItem("Reserva 0-" + datos.numVehiculo, datos.marcaModelo);
-            reservasCarro.push(datos.marcaModelo);  
+            reservasCarro.push(datos.marcaModelo);
             let enlace = document.querySelector(".enlaceVehi" + posicion);
             enlace.style.display = "none";
             swal({
                 icon: 'success',
                 title: 'Vehiculo Reservado Exitosamente',
             });
+            return;
         }
     })
-
-    contador.innerHTML = cont = cont + 1;
 };
 
 
@@ -172,15 +181,15 @@ const eliminarCarro = (i) => {
     contador.innerHTML = cont = cont - 1;
     let contadorDeEntrada = 1;
     allData.forEach(dat => {
-        for (let a = 0;a <= reservasCarro.length; a++){
-            if (contadorDeEntrada < 2){
-                if(i == dat.numVehiculo ){
+        for (let a = 0; a <= reservasCarro.length; a++) {
+            if (contadorDeEntrada < 2) {
+                if (i == dat.numVehiculo) {
                     contadorDeEntrada = contadorDeEntrada + 1;
                     const index = reservasCarro.indexOf(dat.marcaModelo);
-                    reservasCarro.splice(index,1);
+                    reservasCarro.splice(index, 1);
                 }
-            }else{ 
-                
+            } else {
+
             }
         }
         if (dat.numVehiculo == i) {
